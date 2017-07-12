@@ -8,9 +8,16 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.lvqingyang.imagestyletransfer.adapter.MyPagerAdapter;
 import com.lvqingyang.imagestyletransfer.R;
+import com.lvqingyang.imagestyletransfer.adapter.MyPagerAdapter;
 import com.lvqingyang.imagestyletransfer.base.BaseActivity;
+
+import org.lasque.tusdk.TuSdkGeeV1;
+import org.lasque.tusdk.core.TuSdkResult;
+import org.lasque.tusdk.core.utils.TLog;
+import org.lasque.tusdk.impl.activity.TuFragment;
+import org.lasque.tusdk.impl.components.TuAlbumComponent;
+import org.lasque.tusdk.modules.components.TuSdkComponent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,7 +110,42 @@ public class CommunityActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+        }else if (item.getItemId()== R.id.item_post) {
+            choosePicture();
         }
         return super.onOptionsItemSelected(item);
     }
+
+    private void choosePicture(){
+        TuAlbumComponent comp = TuSdkGeeV1.albumCommponent(this, new TuSdkComponent.TuSdkComponentDelegate()
+        {
+            @Override
+            public void onComponentFinished(TuSdkResult result, Error error, TuFragment lastFragment)
+            {
+                // if (lastFragment != null)
+                // lastFragment.dismissActivityWithAnim();
+                TLog.d("onAlbumCommponentReaded: %s | %s", result, error);
+            }
+        });
+
+        // 组件选项配置
+        // @see-http://tusdk.com/docs/android/api/org/lasque/tusdk/impl/components/TuAlbumComponentOption.html
+        // comp.componentOption()
+
+        // @see-http://tusdk.com/docs/android/api/org/lasque/tusdk/impl/components/album/TuAlbumListOption.html
+        // comp.componentOption().albumListOption()
+
+        // @see-http://tusdk.com/docs/android/api/org/lasque/tusdk/impl/components/album/TuPhotoListOption.html
+        // comp.componentOption().photoListOption()
+
+        // 设置选择照片的尺寸限制 默认：CGSize(8000,8000)
+//		comp.componentOption().photoListOption().setMaxSelectionImageSize(new TuSdkSize(8000,8000));
+
+        // 在组件执行完成后自动关闭组件
+        comp.setAutoDismissWhenCompleted(true)
+                // 显示组件
+                .showComponent();
+    }
+
+
 }
