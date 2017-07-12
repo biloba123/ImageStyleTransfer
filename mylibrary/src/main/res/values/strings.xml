@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">LibraryManager</string>
+    <string name="notifyTitle">提示</string>
+    <string name="notifyMsg">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。</string>
+    <string name="setting">设置</string>
+    <string name="cancel">取消</string>
+    <string name="permission_deny">未获得必要权限，无法使用</string>
+    <string name="login_now">登录</string>
+    <string name="register">注册</string>
+    <string name="next">接下来</string>
+    <string name="login">登录</string>
+    <string name="nick">用户名</string>
+    <string name="empty_nick">输入用户名</string>
+    <string name="error_email">输入正确邮箱</string>
+    <string name="short_pwd">密码需六位以上</string>
+    <string name="username_registered">该用户名已被注册</string>
+    <string name="register_fail">注册失败</string>
+    <string name="empty_nick_or_email">输入用户名或邮箱</string>
+    <string name="empty_pwd">输入密码</string>
+    <string name="username_not_register">邮箱或用户名不存在</string>
+    <string name="error_pwd">密码错误</string>
+    <string name="login_succ">登录成功</string>
+    <string name="register_succ">注册成功</string>
+    <string name="login_fail">登录失败</string>
+    <string name="pwd">密码</string>
+    <string name="email">邮箱</string>
+    <string name="loading">加载中...</string>
+    <string name="Error">出错</string>
+    <string name="check">检查网络连接</string>
+    <string name="back">返回</string>
+    <string name="empty_email">邮箱为空</string>
+    <string name="error">出错</string>
+</resources>

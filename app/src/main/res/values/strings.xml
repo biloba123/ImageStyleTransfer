@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">ImageStyleTransfer</string>
+    <string name="title">BILOBA</string>
+    <string name="camera">相机</string>
+    <string name="photo">照片</string>
+    <string name="community">社区</string>
+    <string name="lsq_filter_Brightly">LOMO</string>
+    <string name="lsq_filter_group_GailyColoured">LOMO</string>
+    <string name="save_setting">保存设置</string>
+    <string name="save_">默认保存尺寸</string>
+    <string name="no">无</string>
+    <string name="save_path">默认保存文件夹</string>
+    <string name="file">/storage/emulated/0/Pictures</string>
+    <string name="camera_setting">相机设置</string>
+    <string name="after_take_photo">拍照后启动图片处理</string>
+    <string name="about">关于</string>
+    <string name="about_app">关于本APP</string>
+    <string name="update">检查更新</string>
+    <string name="feedback_info">欢迎您提出宝贵的建议和意见</string>
+    <string name="feedback_type">反馈类型</string>
+    <string name="feedback">意见反馈</string>
+    <string name="feedback_content">反馈内容</string>
+    <string name="submit">提交</string>
+    <string name="my">我的</string>
+    <string name="no_net">无网络</string>
+    <string name="registering">注册中...</string>
+    <string name="registering_">注册中...</string>
+    <string name="logining">登录中...</string>
+    <string name="unlogin">未登录</string>
+    <string name="no_sign">没签名很酷</string>
+    <string name="post_picture">投稿</string>
+
+
+    <array name="type_arr">
+        <item>应用bug</item>
+        <item>问题咨询</item>
+        <item>功能建议</item>
+    </array>
+
+    <array name="titles">
+        <item>精选</item>
+        <item>自然</item>
+        <item>人像</item>
+        <item>美食</item>
+        <item>萌宠</item>
+        <item>建筑</item>
+        <item>生活</item>
+        <item>街拍</item>
+        <item>静物</item>
+    </array>
+
+    <array name="tabs">
+        <item>已发布</item>
+        <item>未审核</item>
+    </array>
+</resources>

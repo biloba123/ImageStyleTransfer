@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SettingItem">
+        <attr name="showType" format="boolean" />
+        <attr name="showInfo" format="boolean"/>
+        <attr name="showCb" format="boolean"/>
+        <attr name="type" format="string"/>
+        <attr name="title" format="string"/>
+        <attr name="info" format="string"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:custom="http://schemas.android.com/apk/res/com.lvqingyang.imagestyletransfer"
+    tools:context="com.lvqingyang.imagestyletransfer.Setting.SettingActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <com.lvqingyang.imagestyletransfer.view.SettingItem
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:type="@string/save_setting"
+        custom:title="@string/save_"
+        custom:showInfo="true"
+        custom:info="@string/no" />
+    <com.lvqingyang.imagestyletransfer.view.SettingItem
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:showType="false"
+        custom:title="@string/save_path"
+        custom:showInfo="true"
+        custom:info="@string/file" />
+    <com.lvqingyang.imagestyletransfer.view.SettingItem
+        android:id="@+id/camera_si"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:type="@string/camera_setting"
+        custom:title="@string/after_take_photo"
+        custom:showCb="true" />
+    <com.lvqingyang.imagestyletransfer.view.SettingItem
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:type="@string/about"
+        custom:title="@string/about_app" />
+    <com.lvqingyang.imagestyletransfer.view.SettingItem
+        android:id="@+id/feedback_si"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:showType="false"
+        custom:title="@string/feedback" />
+    <com.lvqingyang.imagestyletransfer.view.SettingItem
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:showType="false"
+        custom:title="@string/update" />
+</LinearLayout>

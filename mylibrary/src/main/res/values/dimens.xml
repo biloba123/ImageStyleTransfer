@@ -1,0 +1,34 @@
+<resources>
+    <!--ICONS-->
+    <dimen name="icon_margin">24dp</dimen>
+    <dimen name="icon_width_height">20dp</dimen>
+    <dimen name="big_icon">36dp</dimen>
+
+    <!--PADDING & MARGIN-->
+    <dimen name="big_spacing">24dp</dimen>
+    <dimen name="sub_big_spacing">20dp</dimen>
+    <dimen name="medium_spacing">16dp</dimen>
+    <dimen name="sub_medium_spacing">10dp</dimen>
+    <dimen name="small_spacing">8dp</dimen>
+    <dimen name="sub_small_spacing">5dp</dimen>
+
+
+    <!--TEXT-->
+    <dimen name="very_huge_text">42sp</dimen>
+    <dimen name="huge_text">30sp</dimen>
+    <dimen name="big_text">25sp</dimen>
+    <dimen name="sub_big_text">18sp</dimen>
+    <dimen name="medium_text">16sp</dimen>
+    <dimen name="sub_medium_text">14sp</dimen>
+    <dimen name="medium_small_text">10sp</dimen>
+    <dimen name="small_text">8sp</dimen>
+
+    <!--VIEWS-->
+    <dimen name="scroll_bar_size">4dp</dimen>
+    <dimen name="card_corner_radius">0dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_spacing">10dp</dimen>
+
+    <dimen name="status_height">25dp</dimen>
+
+</resources>

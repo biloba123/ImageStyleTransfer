@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+    <TextView
+        android:id="@+id/register_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textColor="#c3ffffff"
+        android:textSize="@dimen/medium_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/status_height"
+        android:padding="@dimen/sub_medium_spacing"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/login"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:mtf_image="@drawable/ic_action_email"
+            app:mtf_hasFocus="true">
+            <EditText
+                android:id="@+id/email_et"
+                android:hint="@string/email"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:maxLines="1"
+                android:inputType="textEmailAddress"
+                android:layout_height="wrap_content" />
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:mtf_image="@drawable/ic_action_pwd"
+            android:layout_marginTop="20dp">
+            <EditText
+                android:id="@+id/pwd_et"
+                android:hint="@string/pwd"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:maxLines="1"
+                android:inputType="textPassword"
+                android:layout_height="wrap_content" />
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:layout_above="@id/login"
+        android:layout_marginBottom="64dp"
+        android:textSize="@dimen/big_text"
+        android:textColor="#cfffffff"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_below="@id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_margin="50dp"
+        android:background="@drawable/login_background"
+        android:layout_height="50dp"
+        android:textSize="@dimen/medium_text"
+        android:text="@string/login_now"
+        android:gravity="center"
+        android:textColor="#c3ffffff"
+        android:clickable="true"
+        />
+
+
+</RelativeLayout>
