@@ -8,4 +8,13 @@
         <attr name="title" format="string"/>
         <attr name="info" format="string"/>
     </declare-styleable>
+
+    <declare-styleable name="CardItem">
+        <attr name="showContent" format="boolean" />
+        <attr name="showHint" format="boolean"/>
+        <attr name="showArrow" format="boolean"/>
+        <attr name="name" format="string"/>
+        <attr name="content" format="string"/>
+        <attr name="hint" format="string"/>
+    </declare-styleable>
 </resources>

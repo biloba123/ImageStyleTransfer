@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 
@@ -220,7 +222,9 @@ public abstract class SolidRVBaseAdapter<T> extends RecyclerView.Adapter<SolidRV
         */
         public void setImage(int viewId, int resId) {
             ImageView iv = getView(viewId);
-            iv.setImageResource(resId);
+            Glide.with(mContext)
+                    .load(resId)
+                    .into(iv);
         }
 
         public void setImage(int viewId, Drawable drawable) {
@@ -236,7 +240,9 @@ public abstract class SolidRVBaseAdapter<T> extends RecyclerView.Adapter<SolidRV
          */
         public void setImageFromInternet(int viewId, String url) {
             ImageView iv = getView(viewId);
-//            Glide.loadImage(url, iv);
+            Glide.with(mContext)
+                    .load(url)
+                    .into(iv);
         }
     }
 

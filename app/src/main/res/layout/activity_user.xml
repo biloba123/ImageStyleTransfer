@@ -61,7 +61,7 @@
                     android:gravity="center"
                     android:maxLength="70"
                     android:maxLines="2"
-                    android:text="@string/no_sign"
+                    tools:text="@string/no_sign"
                     android:textColor="@color/subTextColor"
                     android:textSize="@dimen/medium_text"
                     android:visibility="visible"/>

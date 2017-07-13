@@ -1,11 +1,6 @@
-package com.lvqingyang.imagestyletransfer.adapter;
+package com.lvqingyang.imagestyletransfer.bean;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
+import cn.bmob.v3.BmobObject;
 
 /**
  * 　　┏┓　　  ┏┓+ +
@@ -31,33 +26,37 @@ import java.util.List;
  * 　　　　┗┻┛　┗┻┛+ + + +
  * ━━━━━━神兽出没━━━━━━
  * Author：LvQingYang
- * Date：2017/7/5
+ * Date：2017/7/12
  * Email：biloba12345@gamil.com
  * Info：
  */
 
-public class MyPagerAdapter extends FragmentStatePagerAdapter {
-    private List<Fragment> mFragments = new ArrayList<>();
-    private String[] mTitles;
+public class Feedback extends BmobObject {
+    private Integer type;
+    private String content;
+    private User user;
 
-    public MyPagerAdapter(FragmentManager fm, List<Fragment> mFragments, String[] mTitles) {
-        super(fm);
-        this.mFragments = mFragments;
-        this.mTitles = mTitles;
+    public User getUser() {
+        return user;
     }
 
-    @Override
-    public int getCount() {
-        return mFragments.size();
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mTitles[position];
+    public Integer getType() {
+        return type;
     }
 
-    @Override
-    public Fragment getItem(int position) {
-        return mFragments.get(position);
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

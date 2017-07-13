@@ -1,8 +1,7 @@
-package com.lvqingyang.imagestyletransfer.base;
-
-import com.lvqingyang.imagestyletransfer.bean.User;
+package com.lvqingyang.imagestyletransfer.bean;
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.BmobUser;
 
 /**
  * 　　┏┓　　  ┏┓+ +
@@ -43,10 +42,36 @@ public class Picture extends BmobObject{
     public static final int TYPE_STREET = 278;
     public static final int TYPE_THING = 989;
 
+
     private Integer type;
     private String title;
     private Integer like;
     private User poster;
+    private String imgUrl;
+
+    public Picture() {
+        like=0;
+    }
+
+    public Picture(Integer type, String title, String imgUrl) {
+        poster = BmobUser.getCurrentUser(User.class);
+        like=0;
+        this.type = type;
+        if (title.isEmpty()) {
+            this.title="无题";
+        }else {
+            this.title = title;
+        }
+        this.imgUrl = imgUrl;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
 
     public Integer getType() {
         return type;

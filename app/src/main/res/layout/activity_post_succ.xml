@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     android:padding="@dimen/medium_spacing"
+              android:gravity="center"
+    tools:context="com.lvqingyang.imagestyletransfer.Community.PostSuccActivity">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="@dimen/medium_spacing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/medium_text"
+        android:text="@string/post_succ_"/>
+
+    <TextView
+        android:layout_marginTop="@dimen/medium_spacing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/subTextColor"
+        android:textSize="@dimen/sub_medium_text"
+        android:text="@string/post_succ_info"/>
+
+    <com.andexert.library.RippleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        rv_centered="true">
+    <Button
+        android:id="@+id/back_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_spacing"
+        android:background="@drawable/btn_bg_"
+        android:text="@string/back_community"/>
+    </com.andexert.library.RippleView>
+</LinearLayout>

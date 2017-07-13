@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+                android:padding="@dimen/small_spacing"
+                android:id="@+id/rl"
+                android:clickable="true"
+    android:background="@drawable/info_bg">
+    <com.mikepenz.iconics.view.IconicsImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/icon_iv"/>
+
+    <TextView
+        android:id="@+id/name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/account"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/medium_text"
+        android:layout_toRightOf="@id/icon_iv"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/medium_spacing"/>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_right"
+        android:id="@+id/arrow"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:id="@+id/hint_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="hint"
+        android:textColor="@color/subTextColor"
+        android:layout_toLeftOf="@id/arrow"
+        android:textSize="@dimen/sub_medium_text"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/content_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/subTextColor"
+        android:layout_toRightOf="@id/name_text"
+        android:layout_margin="@dimen/small_spacing"
+        android:textSize="@dimen/medium_text"
+        tools:text="TextView"
+        android:layout_centerInParent="true"/>
+
+
+
+</RelativeLayout>
