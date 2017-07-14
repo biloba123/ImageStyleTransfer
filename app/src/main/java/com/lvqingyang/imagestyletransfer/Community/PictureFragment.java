@@ -131,6 +131,12 @@ public class PictureFragment extends BaseFragment {
                 public int getItemLayoutID(int viewType) {
                     return R.layout.item_picture;
                 }
+
+                @Override
+                protected void onItemClick(View view, int position, Picture bean) {
+                    super.onItemClick(view, position, bean);
+                    PictureDetailActivity.start(mContext, mPictures, position);
+                }
             };
 
             loadPics();
@@ -150,6 +156,7 @@ public class PictureFragment extends BaseFragment {
 
     private void loadPics(){
         BmobQuery<Picture> query = new BmobQuery<Picture>();
+        query.include("poster");
         query.addWhereEqualTo("type", mType-1)
             .setSkip(10*mPageCount) // 忽略前10条数据（即第一页数据结果）
             //返回50条数据，如果不加上这条语句，默认返回10条数据

@@ -1,5 +1,8 @@
 package com.lvqingyang.imagestyletransfer.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.BmobUser;
 
@@ -32,7 +35,7 @@ import cn.bmob.v3.BmobUser;
  * Info：
  */
 
-public class Picture extends BmobObject{
+public class Picture extends BmobObject implements Parcelable {
     public static final int TYPE_NATURE = 214;
     public static final int TYPE_PERSON = 566;
     public static final int TYPE_FOOD = 334;
@@ -104,4 +107,39 @@ public class Picture extends BmobObject{
     public void setPoster(User poster) {
         this.poster = poster;
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.type);
+        dest.writeString(this.title);
+        dest.writeValue(this.like);
+        dest.writeSerializable(this.poster);
+        dest.writeString(this.imgUrl);
+    }
+
+    protected Picture(Parcel in) {
+        this.type = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.title = in.readString();
+        this.like = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.poster = (User) in.readSerializable();
+        this.imgUrl = in.readString();
+    }
+
+    public static final Parcelable.Creator<Picture> CREATOR = new Parcelable.Creator<Picture>() {
+        @Override
+        public Picture createFromParcel(Parcel source) {
+            return new Picture(source);
+        }
+
+        @Override
+        public Picture[] newArray(int size) {
+            return new Picture[size];
+        }
+    };
 }

@@ -2,6 +2,8 @@ package com.lvqingyang.imagestyletransfer.bean;
 
 import android.util.Log;
 
+import java.io.Serializable;
+
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FetchUserInfoListener;
@@ -36,7 +38,7 @@ import cn.bmob.v3.listener.SaveListener;
  * Info：
  */
 
-public class User extends BmobUser {
+public class User extends BmobUser implements Serializable{
     private String sign;
     private String  avater;
     private static final String TAG = "User";

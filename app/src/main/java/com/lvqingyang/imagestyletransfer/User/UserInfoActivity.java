@@ -132,6 +132,10 @@ public class UserInfoActivity extends BaseActivity {
                 Glide.with(this)
                         .load(userInfo.getAvater())
                         .into(headimg);
+            }else {
+                Glide.with(this)
+                        .load(R.drawable.communtiy_person)
+                        .into(headimg);
             }
             accountitem.setContent(userInfo.getEmail());
             nickitem.setContent(userInfo.getUsername());

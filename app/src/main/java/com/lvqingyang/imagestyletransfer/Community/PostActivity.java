@@ -145,6 +145,10 @@ public class PostActivity extends BaseActivity {
                 Glide.with(this)
                         .load(userInfo.getAvater())
                         .into(headimg);
+            }else {
+                Glide.with(this)
+                        .load(R.drawable.communtiy_person)
+                        .into(headimg);
             }
             usernametv.setText(userInfo.getUsername());
         }

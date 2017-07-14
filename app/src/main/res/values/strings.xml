@@ -69,6 +69,11 @@
     <string name="reset_sign_fail">修改签名失败</string>
     <string name="login_first">请先登录</string>
     <string name="no_more">无更多</string>
+    <string name="report">举报</string>
+    <string name="report_pic">举报照片</string>
+    <string name="report_info">您可以对社区里的照片举报以下类型问题：</string>
+    <string name="report_succ">举报成功</string>
+    <string name="report_fail">举报失败</string>
 
 
     <array name="type_arr">
