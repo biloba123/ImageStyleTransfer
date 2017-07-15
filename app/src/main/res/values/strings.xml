@@ -29,6 +29,51 @@
     <string name="unlogin">未登录</string>
     <string name="no_sign">没签名很酷</string>
     <string name="post_picture">投稿</string>
+    <string name="post_to_community">投稿到社区</string>
+    <string name="edit_title">请输入作品标题</string>
+    <string name="no_title">（如果忽略则作品将被缺省命名为”无题“）</string>
+    <string name="pic_type">作品分类：</string>
+    <string name="post">投稿</string>
+    <string name="posting">提交中...</string>
+    <string name="post_succ">提交成功</string>
+    <string name="post_fail">提交失败</string>
+    <string name="choose_type">选择图片类型</string>
+    <string name="post_succ_">投稿成功</string>
+    <string name="post_succ_info">编辑会从大量投稿中选出符合发表条件，质量较为优秀的作品发布在社区。之后您会收到作品是否发表的通知。依赖于投稿的数量，评审可能需要数天时间，敬请谅解。</string>
+    <string name="back_community">返回社区</string>
+    <string name="post_head">上传新头像</string>
+    <string name="user_info">个人信息</string>
+    <string name="post_avater">上传头像中...</string>
+    <string name="post_avater_fail">上传头像失败</string>
+    <string name="post_avater_succ">上传头像成功</string>
+    <string name="account">账号</string>
+    <string name="reset">修改</string>
+    <string name="info">资料</string>
+    <string name="unset">未设置</string>
+    <string name="password">密码</string>
+    <string name="logout">退出登录</string>
+    <string name="edit_feedback">请输入反馈内容</string>
+    <string name="con_net">连接网络后重试</string>
+    <string name="reset_nick">修改昵称</string>
+    <string name="nick_">昵称</string>
+    <string name="new_pwd">新密码</string>
+    <string name="current_pwd">原密码</string>
+    <string name="reset_pwd">修改密码</string>
+    <string name="reset_pwd_succ">修改密码成功</string>
+    <string name="reset_pwd_fail">修改密码失败</string>
+    <string name="reset_nick_succ">修改昵称成功</string>
+    <string name="reset_nick_fail">修改昵称失败</string>
+    <string name="write_sign">编写签名</string>
+    <string name="sign">个人签名</string>
+    <string name="reset_sign_succ">修改签名成功</string>
+    <string name="reset_sign_fail">修改签名失败</string>
+    <string name="login_first">请先登录</string>
+    <string name="no_more">无更多</string>
+    <string name="report">举报</string>
+    <string name="report_pic">举报照片</string>
+    <string name="report_info">您可以对社区里的照片举报以下类型问题：</string>
+    <string name="report_succ">举报成功</string>
+    <string name="report_fail">举报失败</string>
 
 
     <array name="type_arr">
@@ -53,4 +98,5 @@
         <item>已发布</item>
         <item>未审核</item>
     </array>
+
 </resources>

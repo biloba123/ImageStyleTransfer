@@ -25,6 +25,8 @@ import com.mikepenz.iconics.context.IconicsContextWrapper;
 import com.mikepenz.iconics.context.IconicsLayoutInflater;
 import com.mikepenz.iconics.typeface.IIcon;
 
+import org.lasque.tusdk.core.TuSdk;
+
 import cn.bmob.v3.Bmob;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import es.dmoral.toasty.Toasty;
@@ -83,7 +85,6 @@ public abstract class BaseActivity extends CheckPermissionsActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        Bmob.initialize(this, "bf3fef2683cecf005c55a4f6ce32c643");
         LayoutInflaterCompat.setFactory(getLayoutInflater(), new IconicsLayoutInflater(getDelegate()));
         super.onCreate(savedInstanceState);
 
@@ -318,7 +319,7 @@ public abstract class BaseActivity extends CheckPermissionsActivity {
         if (NetWorkUtils.isNetworkConnected(this)) {
             return true;
         }
-        showWarnToast(R.string.check);
+        TuSdk.messageHub().showError(this, "请先连接网络");
         return false;
     }
 

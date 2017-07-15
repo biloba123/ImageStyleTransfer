@@ -13,11 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.lvqingyang.mylibrary.R;
 import com.lvqingyang.imagestyletransfer.tool.MySweetAlertDialog;
 import com.lvqingyang.imagestyletransfer.tool.NetWorkUtils;
+import com.lvqingyang.mylibrary.R;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.typeface.IIcon;
+
+import org.lasque.tusdk.core.TuSdk;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import es.dmoral.toasty.Toasty;
@@ -58,6 +60,7 @@ public abstract class BaseFragment extends SupportFragment  {
     private static final String TAG = "BaseFragment";
     private AppCompatActivity mAppCompatActivity;
     protected MySweetAlertDialog mDialog;
+
 
     protected View rootView;
     public View view;
@@ -282,7 +285,7 @@ public abstract class BaseFragment extends SupportFragment  {
         if (NetWorkUtils.isNetworkConnected(getActivity())) {
             return true;
         }
-        showWarnToast(R.string.check);
+        TuSdk.messageHub().showError(getActivity(), "请先连接网络");
         return false;
     }
 

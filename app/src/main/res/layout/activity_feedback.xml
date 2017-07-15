@@ -52,21 +52,29 @@
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/sub_medium_text"/>
         <EditText
+            android:textSize="@dimen/medium_text"
             android:id="@+id/content_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top|start"
             android:background="@drawable/et_bg"
             android:layout_marginTop="@dimen/small_spacing"
-            android:minLines="5"
-            android:maxLines="5"/>
-        <Button
-            android:id="@+id/submit_btn"
+            android:minLines="6"
+            android:maxLines="6"/>
+
+
+        <com.andexert.library.RippleView
+            android:layout_marginTop="@dimen/big_spacing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/textColor"
-            android:background="@drawable/btn_bg"
-            android:text="@string/submit"
-            android:layout_marginTop="@dimen/big_spacing"/>
+            android:layout_alignParentBottom="true"
+            rv_centered="true">
+            <Button
+                android:id="@+id/submit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg_"
+                android:text="@string/submit"/>
+        </com.andexert.library.RippleView>
     </LinearLayout>
 </LinearLayout>

@@ -5,16 +5,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.lvqingyang.imagestyletransfer.adapter.MyPagerAdapter;
 import com.lvqingyang.imagestyletransfer.R;
+import com.lvqingyang.imagestyletransfer.adapter.MyPagerAdapter;
 import com.lvqingyang.imagestyletransfer.base.BaseActivity;
+import com.lvqingyang.imagestyletransfer.bean.User;
+
+import org.lasque.tusdk.TuSdkGeeV1;
+import org.lasque.tusdk.core.TuSdk;
+import org.lasque.tusdk.core.TuSdkResult;
+import org.lasque.tusdk.impl.activity.TuFragment;
+import org.lasque.tusdk.impl.components.TuAlbumComponent;
+import org.lasque.tusdk.modules.components.TuSdkComponent;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.bmob.v3.BmobUser;
 import cn.hugeterry.coordinatortablayout.CoordinatorTabLayout;
 
 public class CommunityActivity extends BaseActivity {
@@ -24,6 +34,7 @@ public class CommunityActivity extends BaseActivity {
     private int[] mImageArray;
     private List<Fragment> mFragments;
     private String[] mTitles;
+    private static final String TAG = "CommunityActivity";
 
     public static void start(Context context) {
         Intent starter = new Intent(context, CommunityActivity.class);
@@ -103,7 +114,43 @@ public class CommunityActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+        }else if (item.getItemId()== R.id.item_post) {
+            User userInfo = BmobUser.getCurrentUser(User.class);
+            if (userInfo == null) {
+                TuSdk.messageHub().showToast(this, R.string.login_first);
+            }else {
+                choosePicture();
+            }
         }
         return super.onOptionsItemSelected(item);
     }
+
+    private void choosePicture(){
+        TuAlbumComponent comp = TuSdkGeeV1.albumCommponent(this, new TuSdkComponent.TuSdkComponentDelegate()
+        {
+            @Override
+            public void onComponentFinished(TuSdkResult result, Error error, TuFragment lastFragment)
+            {
+                // if (lastFragment != null)
+                // lastFragment.dismissActivityWithAnim();
+                if (result.imageFile == null) {
+                    Log.d(TAG, "onComponentFinished: ");
+                }
+                String r=result.toString();
+                PostActivity.start(CommunityActivity.this,r.substring(r.indexOf("path:")+6,r.indexOf(", name:")));
+            }
+
+
+        });
+
+        // 设置选择照片的尺寸限制 默认：CGSize(8000,8000)
+//		comp.componentOption().photoListOption().setMaxSelectionImageSize(new TuSdkSize(8000,8000));
+
+        // 在组件执行完成后自动关闭组件
+        comp.setAutoDismissWhenCompleted(true)
+                // 显示组件
+                .showComponent();
+    }
+
+
 }

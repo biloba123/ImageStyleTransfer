@@ -1,11 +1,4 @@
-package com.lvqingyang.imagestyletransfer.adapter;
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.lvqingyang.imagestyletransfer.bean;
 
 /**
  * 　　┏┓　　  ┏┓+ +
@@ -31,33 +24,33 @@ import java.util.List;
  * 　　　　┗┻┛　┗┻┛+ + + +
  * ━━━━━━神兽出没━━━━━━
  * Author：LvQingYang
- * Date：2017/7/5
+ * Date：2017/7/12
  * Email：biloba12345@gamil.com
  * Info：
  */
 
-public class MyPagerAdapter extends FragmentStatePagerAdapter {
-    private List<Fragment> mFragments = new ArrayList<>();
-    private String[] mTitles;
+public class PicType {
+    private int imgId;
+    private String name;
 
-    public MyPagerAdapter(FragmentManager fm, List<Fragment> mFragments, String[] mTitles) {
-        super(fm);
-        this.mFragments = mFragments;
-        this.mTitles = mTitles;
+    public PicType(int imgId, String name) {
+        this.imgId = imgId;
+        this.name = name;
     }
 
-    @Override
-    public int getCount() {
-        return mFragments.size();
+    public int getImgId() {
+        return imgId;
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mTitles[position];
+    public void setImgId(int imgId) {
+        this.imgId = imgId;
     }
 
-    @Override
-    public Fragment getItem(int position) {
-        return mFragments.get(position);
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

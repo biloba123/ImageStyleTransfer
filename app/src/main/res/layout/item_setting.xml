@@ -19,36 +19,40 @@
         android:id="@+id/rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
         android:background="@drawable/setting_bg"
+        android:clickable="true"
         android:padding="@dimen/setting_spacing">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_centerVertical="true">
-        <TextView
-            android:id="@+id/title_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/medium_text"
-            android:textColor="@color/textColor"
-            tools:text="保存尺寸"/>
-        <TextView
-            android:id="@+id/info_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/sub_medium_text"
-            android:textColor="@color/subTextColor"
-            android:layout_marginTop="@dimen/sub_small_spacing"
-            tools:text="保存尺寸"/>
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/medium_text"
+                tools:text="保存尺寸"/>
+
+            <TextView
+                android:id="@+id/info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sub_small_spacing"
+                android:textColor="@color/subTextColor"
+                android:textSize="@dimen/sub_medium_text"
+                tools:text="保存尺寸"/>
         </LinearLayout>
+
         <CheckBox
             android:id="@+id/checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
     </RelativeLayout>
 
 </LinearLayout>
