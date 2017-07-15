@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.lvqingyang.imagestyletransfer.R;
 import com.lvqingyang.imagestyletransfer.base.BaseActivity;
 import com.lvqingyang.imagestyletransfer.bean.Feedback;
-import com.lvqingyang.imagestyletransfer.bean.User;
 import com.lvqingyang.imagestyletransfer.tool.SolidRVBaseAdapter;
 
 import org.lasque.tusdk.core.TuSdk;
@@ -22,7 +21,6 @@ import org.lasque.tusdk.core.TuSdk;
 import java.util.Arrays;
 import java.util.List;
 
-import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
@@ -62,12 +60,8 @@ public class FeedbackActivity extends BaseActivity {
             public void onClick(View v) {
                 String content=contentet.getText().toString();
                 if (!content.isEmpty()) {
-                    Feedback feedback=new Feedback();
-                    feedback.setType(mType);
-                    feedback.setContent(content);
-                    feedback.setUser(BmobUser.getCurrentUser(User.class));
                     TuSdk.messageHub().setStatus(FeedbackActivity.this, R.string.posting);
-                    feedback.save(new SaveListener<String>() {
+                    Feedback.postFeedBack(mType,content, new SaveListener<String>() {
                         @Override
                         public void done(String objectId, BmobException e) {
                             if(e==null){

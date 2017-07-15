@@ -2,7 +2,6 @@ package com.lvqingyang.imagestyletransfer.bean;
 
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.listener.SaveListener;
 
 /**
  * 　　┏┓　　  ┏┓+ +
@@ -28,22 +27,40 @@ import cn.bmob.v3.listener.SaveListener;
  * 　　　　┗┻┛　┗┻┛+ + + +
  * ━━━━━━神兽出没━━━━━━
  * Author：LvQingYang
- * Date：2017/7/12
+ * Date：2017/7/15
  * Email：biloba12345@gamil.com
  * Info：
  */
 
-public class Feedback extends BmobObject {
+public class PostPicture extends BmobObject {
     private Integer type;
-    private String content;
-    private User user;
+    private String title;
+    private User poster;
+    private String imgUrl;
+    private boolean isAccept;
 
-    public User getUser() {
-        return user;
+    public PostPicture() {
+        isAccept=false;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public PostPicture(Integer type, String title, String imgUrl) {
+        isAccept=false;
+        poster = BmobUser.getCurrentUser(User.class);
+        this.type = type;
+        if (title.isEmpty()) {
+            this.title="无题";
+        }else {
+            this.title = title;
+        }
+        this.imgUrl = imgUrl;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public Integer getType() {
@@ -54,21 +71,27 @@ public class Feedback extends BmobObject {
         this.type = type;
     }
 
-    public String getContent() {
-        return content;
+    public String getTitle() {
+        return title;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    //提交反馈
-    public static void postFeedBack(Integer type,String content,SaveListener lis){
-        Feedback feedback=new Feedback();
-        feedback.setType(type);
-        feedback.setContent(content);
-        feedback.setUser(BmobUser.getCurrentUser(User.class));
-        feedback.save(lis);
+    public User getPoster() {
+        return poster;
     }
 
+    public void setPoster(User poster) {
+        this.poster = poster;
+    }
+
+    public boolean isAccept() {
+        return isAccept;
+    }
+
+    public void setAccept(boolean accept) {
+        isAccept = accept;
+    }
 }

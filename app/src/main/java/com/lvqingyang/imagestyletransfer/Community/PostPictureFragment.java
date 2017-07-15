@@ -10,14 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.gson.Gson;
 import com.lcodecore.tkrefreshlayout.RefreshListenerAdapter;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 import com.lcodecore.tkrefreshlayout.footer.BallPulseView;
 import com.lcodecore.tkrefreshlayout.header.GoogleDotView;
 import com.lvqingyang.imagestyletransfer.R;
 import com.lvqingyang.imagestyletransfer.base.BaseFragment;
-import com.lvqingyang.imagestyletransfer.bean.Picture;
+import com.lvqingyang.imagestyletransfer.bean.PostPicture;
 import com.lvqingyang.imagestyletransfer.bean.User;
 import com.lvqingyang.imagestyletransfer.tool.SolidRVBaseAdapter;
 
@@ -63,25 +62,21 @@ import static com.lvqingyang.imagestyletransfer.R.id.refreshLayout;
  * Info：
  */
 
-public class PictureFragment extends BaseFragment {
+public class PostPictureFragment extends BaseFragment {
 
     private RecyclerView mRecyclerView;
     private SolidRVBaseAdapter mAdapter;
-    private int mType;
-    private static final String KEY_TYPE = "TYPE";
-    private List<Picture> mPictures=new ArrayList<>();
-    private static final String TAG = "PictureFragment";
+    private List<PostPicture> mPictures=new ArrayList<>();
+    private static final String TAG = "PostPictureFragment";
     private int mPageCount;
     private TwinklingRefreshLayout mRefreshLayout;
-    public static final int TYPE_POSTED = 212;
     //    private static final String BOUNDLE_COUNT = "BOUNDLE_COUNT";
 //    private Bundle savedState;
 //    private static final String KEY_SAVED_STAYE = "SAVED_STAYE";
 
-    public static PictureFragment newInstance(int type) {
+    public static PostPictureFragment newInstance() {
         Bundle args = new Bundle();
-        args.putInt(KEY_TYPE,type);
-        PictureFragment fragment = new PictureFragment();
+        PostPictureFragment fragment = new PostPictureFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -124,10 +119,9 @@ public class PictureFragment extends BaseFragment {
     @Override
     protected void initData() {
         if (mPageCount==0) {
-            mType=getArguments().getInt(KEY_TYPE);
-            mAdapter=new SolidRVBaseAdapter<Picture>(getActivity(), mPictures) {
+            mAdapter=new SolidRVBaseAdapter<PostPicture>(getActivity(), mPictures) {
                 @Override
-                protected void onBindDataToView(SolidCommonViewHolder holder, Picture bean) {
+                protected void onBindDataToView(SolidCommonViewHolder holder, PostPicture bean) {
                     holder.setImageFromInternet(R.id.iv,bean.getImgUrl());
                 }
 
@@ -136,11 +130,6 @@ public class PictureFragment extends BaseFragment {
                     return R.layout.item_picture;
                 }
 
-                @Override
-                protected void onItemClick(View view, int position, Picture bean) {
-                    super.onItemClick(view, position, bean);
-                    PictureDetailActivity.start(mContext, new Gson().toJson(mPictures), position);
-                }
             };
 
             loadPics();
@@ -159,24 +148,17 @@ public class PictureFragment extends BaseFragment {
     }
 
     private void loadPics(){
-        BmobQuery<Picture> query = new BmobQuery<Picture>();
-        if (mType==0) {
-            query.addWhereEqualTo("featured", true);
-        }else if (mType==TYPE_POSTED){
-            query.addWhereEqualTo("poster", BmobUser.getCurrentUser(User.class));
-        }else {
-            query.addWhereEqualTo("type", mType-1);
-        }
+        BmobQuery<PostPicture> query = new BmobQuery<PostPicture>();
+        query.addWhereEqualTo("poster", BmobUser.getCurrentUser(User.class));
 
-        query.include("poster");
         query.setSkip(10*mPageCount) // 忽略前10条数据（即第一页数据结果）
             //返回50条数据，如果不加上这条语句，默认返回10条数据
             .setLimit(10)
 //             .addQueryKeys("objectId,type,title,like,poster,imgUrl")//只返回Person表的objectId这列的值
             //执行查询方法
-            .findObjects(new FindListener<Picture>() {
+            .findObjects(new FindListener<PostPicture>() {
             @Override
-            public void done(List<Picture> object, BmobException e) {
+            public void done(List<PostPicture> object, BmobException e) {
                 if(e==null){
                     mRefreshLayout.finishLoadmore();
                     mPageCount++;

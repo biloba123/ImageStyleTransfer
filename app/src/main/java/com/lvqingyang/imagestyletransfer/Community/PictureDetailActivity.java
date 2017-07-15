@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +12,8 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.like.LikeButton;
 import com.like.OnLikeListener;
 import com.lvqingyang.imagestyletransfer.R;
@@ -27,8 +28,10 @@ import org.lasque.tusdk.core.TuSdk;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.listener.UpdateListener;
 
 public class PictureDetailActivity extends BaseActivity {
 
@@ -40,10 +43,10 @@ public class PictureDetailActivity extends BaseActivity {
     private static final String KEY_POSITION = "POSITION";
     private static final String TAG = "PictureDetailActivity";
 
-    public static void start(Context context, List<Picture> pics,int pos) {
+    public static void start(Context context,String pics,int pos) {
         Intent starter = new Intent(context, PictureDetailActivity.class);
         starter.putExtra(KEY_POSITION,pos);
-        starter.putParcelableArrayListExtra(KEY_PIC_LIST, (ArrayList<? extends Parcelable>) pics);
+        starter.putExtra(KEY_PIC_LIST, pics);
         context.startActivity(starter);
     }
 
@@ -65,10 +68,36 @@ public class PictureDetailActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        mPicList=getIntent().getParcelableArrayListExtra(KEY_PIC_LIST);
+        mPicList=new Gson().fromJson(getIntent().getStringExtra(KEY_PIC_LIST),
+                new TypeToken<List<Picture>>(){}.getType());
+
+
+        //查询该用户各图片点赞情况
+//        Like.getUserLikes(mPicList, new FindListener<Like>() {
+//            @Override
+//            public void done(List<Like> list, BmobException e) {
+//                if (e == null) {
+//                    for (int i = 0; i < mPicList.size(); i++) {
+//                        String imgId=mPicList.get(i).getObjectId();
+//                        //查找是否有点赞
+//                        boolean isLiked=false;
+//                        for (Like like : list) {
+//                            if (like.getImgId().equals(imgId)) {
+//                                isLiked=true;
+//                                break;
+//                            }
+//                        }
+//                        ((LikeButton)picrv.getChildAt(i).findViewById(R.id.like_btn)).setLiked(isLiked);
+//                    }
+//                }else {
+//                    Log.d(TAG, "done: "+e.getMessage());
+//                }
+//            }
+//        });
+
         mAdapter=new SolidRVBaseAdapter<Picture>(this, mPicList) {
             @Override
-            protected void onBindDataToView(SolidCommonViewHolder holder, final Picture pic) {
+            protected void onBindDataToView(final SolidCommonViewHolder holder, final Picture pic) {
                 holder.setText(R.id.title_tv,pic.getTitle());
                 holder.setImageFromInternet(R.id.iv,pic.getImgUrl());
                 holder.setText(R.id.like_count_tv,pic.getLike()+"");
@@ -89,11 +118,49 @@ public class PictureDetailActivity extends BaseActivity {
                         showReportDialog(pic);
                     }
                 });
+
+                final LikeButton likebtn=holder.getView(R.id.like_btn);
+                if (pic.getLikedUsers()!=null&&pic.getLikedUsers().toString().contains((BmobUser.getCurrentUser(User.class).getObjectId()))) {
+                    likebtn.setLiked(true);
+                    likebtn.setEnabled(false);
+                }
                 //点赞
-                ((LikeButton)holder.getView(R.id.like_btn)).setOnLikeListener(new OnLikeListener() {
+                likebtn.setOnLikeListener(new OnLikeListener() {
                     @Override
                     public void liked(LikeButton likeButton) {
-
+//                        Like like=new Like(pic.getObjectId());
+//                        like.save(new SaveListener<String>() {
+//
+//                            @Override
+//                            public void done(String objectId, BmobException e) {
+//                                if(e==null){
+//                                    Log.d(TAG, "创建数据成功：点赞" + objectId);
+//
+//                                }else{
+//                                    Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
+//                                }
+//                            }
+//                        });
+                        likebtn.setLiked(true);
+                        likebtn.setEnabled(false);
+                        if (pic.getLikedUsers()==null) {
+                            pic.setLikedUsers(new ArrayList<String>());
+                        }
+                        pic.getLikedUsers().add(BmobUser.getCurrentUser(User.class).getObjectId());
+                        pic.increment("like");
+                        pic.update(new UpdateListener() {
+                            @Override
+                            public void done(BmobException e) {
+                                if(e==null) {
+                                    Log.d(TAG, "创建数据成功：赞数曾一");
+                                    holder.setText(R.id.like_count_tv,pic.getLike()+1+"");
+                                }else{
+                                    Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
+                                    likebtn.setLiked(false);
+                                    likebtn.setEnabled(true);
+                                }
+                            }
+                        });
                     }
 
                     @Override
@@ -135,7 +202,8 @@ public class PictureDetailActivity extends BaseActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         RadioButton rb=view.findViewById(rg.getCheckedRadioButtonId());
-                        Report report=new Report(pic.getImgUrl(), pic.getPoster(),  rb.getText().toString());
+                        Log.d(TAG, "onClick: "+pic.getObjectId());
+                        Report report=new Report(pic.getObjectId(), pic.getPoster(),  rb.getText().toString());
                         report.save(new SaveListener<String>() {
 
                             @Override

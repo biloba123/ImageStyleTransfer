@@ -1,6 +1,7 @@
 package com.lvqingyang.imagestyletransfer.tool;
 
 import android.app.Activity;
+import android.util.Log;
 
 import org.lasque.tusdk.TuSdkGeeV1;
 import org.lasque.tusdk.core.TuSdkResult;
@@ -44,6 +45,8 @@ import org.lasque.tusdk.modules.components.TuSdkHelperComponent;
  */
 
 public class ComponentHelper {
+
+    private static final String TAG = "ComponentHelper";
 
     //显示相机
     public static void showCamera(Activity activity)
@@ -288,7 +291,7 @@ public class ComponentHelper {
             @Override
             public void onComponentFinished(TuSdkResult result, Error error, TuFragment lastFragment)
             {
-                TLog.d("onEditMultipleComponentReaded: %s | %s", result, error);
+                Log.d(TAG, "onComponentFinished: "+result+"\n"+result.image+"\n"+result.imageFile);
 
                 // 默认输出为 Bitmap  -> result.image
 
@@ -362,7 +365,7 @@ public class ComponentHelper {
                 // 设置临时文件
                 .setTempFilePath(result.imageFile)
                 // 在组件执行完成后自动关闭组件
-                .setAutoDismissWhenCompleted(true)
+//                .setAutoDismissWhenCompleted(true)
                 // 开启组件
                 .showComponent();
     }

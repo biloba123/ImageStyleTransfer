@@ -13,7 +13,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
@@ -29,6 +29,7 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.lvqingyang.imagestyletransfer.Community.PictureFragment;
+import com.lvqingyang.imagestyletransfer.Community.PostPictureFragment;
 import com.lvqingyang.imagestyletransfer.Login.LoginActivity;
 import com.lvqingyang.imagestyletransfer.R;
 import com.lvqingyang.imagestyletransfer.base.BaseActivity;
@@ -125,7 +126,9 @@ public class UserActivity extends BaseActivity {
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showEditSignDialog();
+                if (userInfo != null) {
+                    showEditSignDialog();
+                }
             }
         });
     }
@@ -149,7 +152,7 @@ public class UserActivity extends BaseActivity {
     }
 
     //ViewPager适配器
-    class ViewPagerAdapter extends FragmentPagerAdapter {
+    class ViewPagerAdapter extends FragmentStatePagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
@@ -179,9 +182,9 @@ public class UserActivity extends BaseActivity {
     //添加tab
     private void addTabs(List<Fragment> fragments, List<String> titles){
         String stringArray[]=getResources().getStringArray(R.array.tabs);
-        fragments.add(PictureFragment.newInstance(0));
+        fragments.add(PictureFragment.newInstance(PictureFragment.TYPE_POSTED));
         titles.add(stringArray[0]);
-        fragments.add(PictureFragment.newInstance(1));
+        fragments.add(PostPictureFragment.newInstance());
         titles.add(stringArray[1]);
     }
 

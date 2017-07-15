@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 import com.lvqingyang.imagestyletransfer.R;
 import com.lvqingyang.imagestyletransfer.base.BaseActivity;
 import com.lvqingyang.imagestyletransfer.bean.PicType;
-import com.lvqingyang.imagestyletransfer.bean.Picture;
+import com.lvqingyang.imagestyletransfer.bean.PostPicture;
 import com.lvqingyang.imagestyletransfer.bean.User;
 import com.lvqingyang.imagestyletransfer.tool.SolidRVBaseAdapter;
 
@@ -77,12 +77,11 @@ public class PostActivity extends BaseActivity {
             public void onClick(View v) {
                 if (mPicType!=-1) {
                     if (checkInternet()) {
-                        final Picture pic=new Picture();
+                        final PostPicture pic=new PostPicture();
                         String title=titleet.getText().toString();
                         pic.setTitle(title.isEmpty()?"无题":title);
                         pic.setType(mPicType);
                         pic.setPoster(userInfo);
-                        pic.setLike(0);
                         TuSdk.messageHub().setStatus(PostActivity.this, R.string.posting);
                         final BmobFile bmobFile = new BmobFile(new File(mImagePath));
                         bmobFile.uploadblock(new UploadFileListener() {

@@ -34,23 +34,23 @@ import cn.bmob.v3.BmobUser;
 
 public class Report extends BmobObject {
     private User user;
-    private String imgUrl;
+    private String imgId;
     private User poster;
     private String type;
 
-    public Report(String imgUrl, User poster, String type) {
-        this.imgUrl = imgUrl;
+    public Report(String imgId, User poster, String type) {
+        this.imgId=imgId;
         this.poster = poster;
         this.type = type;
         user= BmobUser.getCurrentUser(User.class);
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public String getImgId() {
+        return imgId;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setImgId(String imgId) {
+        this.imgId = imgId;
     }
 
     public User getUser() {

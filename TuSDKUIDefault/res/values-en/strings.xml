@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="lsq_sdk_name">TuSDK</string>
+    <string name="lsq_sdk_name">biloba</string>
     <string name="lsq_exit_info">Tap back again to exit</string>
-    <string name="lsq_text">TuSDK</string>
+    <string name="lsq_text">biloba</string>
     <string name="lsq_reset">Reset</string>
     <string name="lsq_initing">Initializing</string>
     <string name="lsq_inited">Initialized</string>

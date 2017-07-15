@@ -1,7 +1,7 @@
 package com.lvqingyang.imagestyletransfer.bean;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.util.ArrayList;
+import java.util.List;
 
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.BmobUser;
@@ -35,22 +35,14 @@ import cn.bmob.v3.BmobUser;
  * Info：
  */
 
-public class Picture extends BmobObject implements Parcelable {
-    public static final int TYPE_NATURE = 214;
-    public static final int TYPE_PERSON = 566;
-    public static final int TYPE_FOOD = 334;
-    public static final int TYPE_PET = 559;
-    public static final int TYPE_BUILDING = 221;
-    public static final int  TYPE_LIFT= 107;
-    public static final int TYPE_STREET = 278;
-    public static final int TYPE_THING = 989;
-
-
+public class Picture extends BmobObject {
     private Integer type;
     private String title;
     private Integer like;
     private User poster;
     private String imgUrl;
+    private boolean featured;
+    private List<String> likedUsers;
 
     public Picture() {
         like=0;
@@ -66,6 +58,7 @@ public class Picture extends BmobObject implements Parcelable {
             this.title = title;
         }
         this.imgUrl = imgUrl;
+        likedUsers=new ArrayList<>();
     }
 
     public String getImgUrl() {
@@ -108,38 +101,19 @@ public class Picture extends BmobObject implements Parcelable {
         this.poster = poster;
     }
 
-
-    @Override
-    public int describeContents() {
-        return 0;
+    public List<String> getLikedUsers() {
+        return likedUsers;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(this.type);
-        dest.writeString(this.title);
-        dest.writeValue(this.like);
-        dest.writeSerializable(this.poster);
-        dest.writeString(this.imgUrl);
+    public void setLikedUsers(List<String> likedUsers) {
+        this.likedUsers = likedUsers;
     }
 
-    protected Picture(Parcel in) {
-        this.type = (Integer) in.readValue(Integer.class.getClassLoader());
-        this.title = in.readString();
-        this.like = (Integer) in.readValue(Integer.class.getClassLoader());
-        this.poster = (User) in.readSerializable();
-        this.imgUrl = in.readString();
+    public boolean isFeatured() {
+        return featured;
     }
 
-    public static final Parcelable.Creator<Picture> CREATOR = new Parcelable.Creator<Picture>() {
-        @Override
-        public Picture createFromParcel(Parcel source) {
-            return new Picture(source);
-        }
-
-        @Override
-        public Picture[] newArray(int size) {
-            return new Picture[size];
-        }
-    };
+    public void setFeatured(boolean featured) {
+        this.featured = featured;
+    }
 }
