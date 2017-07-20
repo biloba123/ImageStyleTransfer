@@ -182,9 +182,17 @@ public class UserActivity extends BaseActivity {
     //添加tab
     private void addTabs(List<Fragment> fragments, List<String> titles){
         String stringArray[]=getResources().getStringArray(R.array.tabs);
-        fragments.add(PictureFragment.newInstance(PictureFragment.TYPE_POSTED));
+        if (userInfo == null) {
+            fragments.add(new Fragment());
+        }else {
+            fragments.add(PictureFragment.newInstance(PictureFragment.TYPE_POSTED));
+        }
         titles.add(stringArray[0]);
-        fragments.add(PostPictureFragment.newInstance());
+        if (userInfo == null) {
+            fragments.add(new Fragment());
+        }else {
+            fragments.add(PostPictureFragment.newInstance());
+        }
         titles.add(stringArray[1]);
     }
 
@@ -289,6 +297,7 @@ public class UserActivity extends BaseActivity {
         if (requestCode==REQUEST_LOGIN) {
             if (resultCode==RESULT_OK) {
                 showUserInfo();
+                vp.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
             }
         }else if (requestCode==REQUEST_INFO) {
             if (resultCode==RESULT_OK) {

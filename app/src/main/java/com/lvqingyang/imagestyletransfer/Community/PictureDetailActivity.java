@@ -201,7 +201,7 @@ public class PictureDetailActivity extends BaseActivity {
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        RadioButton rb=view.findViewById(rg.getCheckedRadioButtonId());
+                        RadioButton rb= (RadioButton) view.findViewById(rg.getCheckedRadioButtonId());
                         Log.d(TAG, "onClick: "+pic.getObjectId());
                         Report report=new Report(pic.getObjectId(), pic.getPoster(),  rb.getText().toString());
                         report.save(new SaveListener<String>() {

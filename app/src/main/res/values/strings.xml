@@ -1,79 +1,83 @@
-<resources>
-    <string name="app_name">ImageStyleTransfer</string>
-    <string name="title">BILOBA</string>
-    <string name="camera">相机</string>
-    <string name="photo">照片</string>
-    <string name="community">社区</string>
-    <string name="lsq_filter_Brightly">LOMO</string>
-    <string name="lsq_filter_group_GailyColoured">LOMO</string>
-    <string name="save_setting">保存设置</string>
-    <string name="save_">默认保存尺寸</string>
-    <string name="no">无</string>
-    <string name="save_path">默认保存文件夹</string>
-    <string name="file">/storage/emulated/0/Pictures</string>
-    <string name="camera_setting">相机设置</string>
-    <string name="after_take_photo">拍照后启动图片处理</string>
-    <string name="about">关于</string>
-    <string name="about_app">关于本APP</string>
-    <string name="update">检查更新</string>
-    <string name="feedback_info">欢迎您提出宝贵的建议和意见</string>
-    <string name="feedback_type">反馈类型</string>
-    <string name="feedback">意见反馈</string>
-    <string name="feedback_content">反馈内容</string>
-    <string name="submit">提交</string>
-    <string name="my">我的</string>
-    <string name="no_net">无网络</string>
-    <string name="registering">注册中...</string>
-    <string name="registering_">注册中...</string>
-    <string name="logining">登录中...</string>
-    <string name="unlogin">未登录</string>
-    <string name="no_sign">没签名很酷</string>
-    <string name="post_picture">投稿</string>
-    <string name="post_to_community">投稿到社区</string>
-    <string name="edit_title">请输入作品标题</string>
-    <string name="no_title">（如果忽略则作品将被缺省命名为”无题“）</string>
-    <string name="pic_type">作品分类：</string>
-    <string name="post">投稿</string>
-    <string name="posting">提交中...</string>
-    <string name="post_succ">提交成功</string>
-    <string name="post_fail">提交失败</string>
-    <string name="choose_type">选择图片类型</string>
-    <string name="post_succ_">投稿成功</string>
-    <string name="post_succ_info">编辑会从大量投稿中选出符合发表条件，质量较为优秀的作品发布在社区。之后您会收到作品是否发表的通知。依赖于投稿的数量，评审可能需要数天时间，敬请谅解。</string>
-    <string name="back_community">返回社区</string>
-    <string name="post_head">上传新头像</string>
-    <string name="user_info">个人信息</string>
-    <string name="post_avater">上传头像中...</string>
-    <string name="post_avater_fail">上传头像失败</string>
-    <string name="post_avater_succ">上传头像成功</string>
-    <string name="account">账号</string>
-    <string name="reset">修改</string>
-    <string name="info">资料</string>
-    <string name="unset">未设置</string>
-    <string name="password">密码</string>
-    <string name="logout">退出登录</string>
-    <string name="edit_feedback">请输入反馈内容</string>
-    <string name="con_net">连接网络后重试</string>
-    <string name="reset_nick">修改昵称</string>
-    <string name="nick_">昵称</string>
-    <string name="new_pwd">新密码</string>
-    <string name="current_pwd">原密码</string>
-    <string name="reset_pwd">修改密码</string>
-    <string name="reset_pwd_succ">修改密码成功</string>
-    <string name="reset_pwd_fail">修改密码失败</string>
-    <string name="reset_nick_succ">修改昵称成功</string>
-    <string name="reset_nick_fail">修改昵称失败</string>
-    <string name="write_sign">编写签名</string>
-    <string name="sign">个人签名</string>
-    <string name="reset_sign_succ">修改签名成功</string>
-    <string name="reset_sign_fail">修改签名失败</string>
-    <string name="login_first">请先登录</string>
-    <string name="no_more">无更多</string>
-    <string name="report">举报</string>
-    <string name="report_pic">举报照片</string>
-    <string name="report_info">您可以对社区里的照片举报以下类型问题：</string>
-    <string name="report_succ">举报成功</string>
-    <string name="report_fail">举报失败</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="MissingTranslation">易图</string>
+    <string name="title" tools:ignore="MissingTranslation">EasyEdit</string>
+    <string name="camera" tools:ignore="MissingTranslation">相机</string>
+    <string name="photo" tools:ignore="MissingTranslation">照片</string>
+    <string name="community" tools:ignore="MissingTranslation">社区</string>
+    <string name="lsq_filter_Brightly" tools:ignore="MissingTranslation">LOMO</string>
+    <string name="lsq_filter_group_GailyColoured" tools:ignore="MissingTranslation">LOMO</string>
+    <string name="save_setting" tools:ignore="MissingTranslation">保存设置</string>
+    <string name="save_" tools:ignore="MissingTranslation">默认保存尺寸</string>
+    <string name="no" tools:ignore="MissingTranslation">无</string>
+    <string name="save_path" tools:ignore="MissingTranslation">默认保存文件夹</string>
+    <string name="file" tools:ignore="MissingTranslation">/storage/emulated/0/Pictures</string>
+    <string name="camera_setting" tools:ignore="MissingTranslation">相机设置</string>
+    <string name="after_take_photo" tools:ignore="MissingTranslation">拍照后启动图片处理</string>
+    <string name="about" tools:ignore="MissingTranslation">关于</string>
+    <string name="about_app" tools:ignore="MissingTranslation">关于本APP</string>
+    <string name="update" tools:ignore="MissingTranslation">检查更新</string>
+    <string name="feedback_info" tools:ignore="MissingTranslation">欢迎您提出宝贵的建议和意见</string>
+    <string name="feedback_type" tools:ignore="MissingTranslation">反馈类型</string>
+    <string name="feedback" tools:ignore="MissingTranslation">意见反馈</string>
+    <string name="feedback_content" tools:ignore="MissingTranslation">反馈内容</string>
+    <string name="submit" tools:ignore="MissingTranslation">提交</string>
+    <string name="my" tools:ignore="MissingTranslation">我的</string>
+    <string name="no_net" tools:ignore="MissingTranslation">无网络</string>
+    <string name="registering" tools:ignore="MissingTranslation">注册中...</string>
+    <string name="registering_" tools:ignore="MissingTranslation">注册中...</string>
+    <string name="logining" tools:ignore="MissingTranslation">登录中...</string>
+    <string name="unlogin" tools:ignore="MissingTranslation">未登录</string>
+    <string name="no_sign" tools:ignore="MissingTranslation">没签名很酷</string>
+    <string name="post_picture" tools:ignore="MissingTranslation">投稿</string>
+    <string name="post_to_community" tools:ignore="MissingTranslation">投稿到社区</string>
+    <string name="edit_title" tools:ignore="MissingTranslation">请输入作品标题</string>
+    <string name="no_title" tools:ignore="MissingTranslation">（如果忽略则作品将被缺省命名为”无题“）</string>
+    <string name="pic_type" tools:ignore="MissingTranslation">作品分类：</string>
+    <string name="post" tools:ignore="MissingTranslation">投稿</string>
+    <string name="posting" tools:ignore="MissingTranslation">提交中...</string>
+    <string name="post_succ" tools:ignore="MissingTranslation">提交成功</string>
+    <string name="post_fail" tools:ignore="MissingTranslation">提交失败</string>
+    <string name="choose_type" tools:ignore="MissingTranslation">选择图片类型</string>
+    <string name="post_succ_" tools:ignore="MissingTranslation">投稿成功</string>
+    <string name="post_succ_info" tools:ignore="MissingTranslation">编辑会从大量投稿中选出符合发表条件，质量较为优秀的作品发布在社区。之后您会收到作品是否发表的通知。依赖于投稿的数量，评审可能需要数天时间，敬请谅解。</string>
+    <string name="back_community" tools:ignore="MissingTranslation">返回社区</string>
+    <string name="post_head" tools:ignore="MissingTranslation">上传新头像</string>
+    <string name="user_info" tools:ignore="MissingTranslation">个人信息</string>
+    <string name="post_avater" tools:ignore="MissingTranslation">上传头像中...</string>
+    <string name="post_avater_fail" tools:ignore="MissingTranslation">上传头像失败</string>
+    <string name="post_avater_succ" tools:ignore="MissingTranslation">上传头像成功</string>
+    <string name="account" tools:ignore="MissingTranslation">账号</string>
+    <string name="reset" tools:ignore="MissingTranslation">修改</string>
+    <string name="info" tools:ignore="MissingTranslation">资料</string>
+    <string name="unset" tools:ignore="MissingTranslation">未设置</string>
+    <string name="password" tools:ignore="MissingTranslation">密码</string>
+    <string name="logout" tools:ignore="MissingTranslation">退出登录</string>
+    <string name="edit_feedback" tools:ignore="MissingTranslation">请输入反馈内容</string>
+    <string name="con_net" tools:ignore="MissingTranslation">连接网络后重试</string>
+    <string name="reset_nick" tools:ignore="MissingTranslation">修改昵称</string>
+    <string name="nick_" tools:ignore="MissingTranslation">昵称</string>
+    <string name="new_pwd" tools:ignore="MissingTranslation">新密码</string>
+    <string name="current_pwd" tools:ignore="MissingTranslation">原密码</string>
+    <string name="reset_pwd" tools:ignore="MissingTranslation">修改密码</string>
+    <string name="reset_pwd_succ" tools:ignore="MissingTranslation">修改密码成功</string>
+    <string name="reset_pwd_fail" tools:ignore="MissingTranslation">修改密码失败</string>
+    <string name="reset_nick_succ" tools:ignore="MissingTranslation">修改昵称成功</string>
+    <string name="reset_nick_fail" tools:ignore="MissingTranslation">修改昵称失败</string>
+    <string name="write_sign" tools:ignore="MissingTranslation">编写签名</string>
+    <string name="sign" tools:ignore="MissingTranslation">个人签名</string>
+    <string name="reset_sign_succ" tools:ignore="MissingTranslation">修改签名成功</string>
+    <string name="reset_sign_fail" tools:ignore="MissingTranslation">修改签名失败</string>
+    <string name="login_first" tools:ignore="MissingTranslation">请先登录</string>
+    <string name="no_more" tools:ignore="MissingTranslation">无更多</string>
+    <string name="report" tools:ignore="MissingTranslation">举报</string>
+    <string name="report_pic" tools:ignore="MissingTranslation">举报照片</string>
+    <string name="report_info" tools:ignore="MissingTranslation">您可以对社区里的照片举报以下类型问题：</string>
+    <string name="report_succ" tools:ignore="MissingTranslation">举报成功</string>
+    <string name="report_fail" tools:ignore="MissingTranslation">举报失败</string>
+    <string name="pic_share">照片分享</string>
+    <string name="not_install">未安装</string>
+    <string name="post_community">投稿到社区</string>
+    <string name="back_ablum">返回编辑</string>
 
 
     <array name="type_arr">

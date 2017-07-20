@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lvqingyang.imagestyletransfer.ShareActivity">
+
+    <include layout="@layout/toolbar"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/share_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/medium_spacing">
+        <com.andexert.library.RippleView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            rv_centered="true">
+            <LinearLayout
+                android:id="@+id/post_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="@dimen/small_spacing"
+                android:padding="@dimen/medium_spacing"
+                android:background="@drawable/btn_bg__">
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/paper_fly"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColor"
+                    android:layout_marginTop="@dimen/sub_small_spacing"
+                    android:text="@string/post_community"/>
+            </LinearLayout>
+        </com.andexert.library.RippleView>
+        <com.andexert.library.RippleView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            rv_centered="true">
+            <LinearLayout
+                android:id="@+id/back_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin="@dimen/small_spacing"
+                android:padding="@dimen/medium_spacing"
+                android:background="@drawable/btn_bg__">
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ablum"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColor"
+                    android:layout_marginTop="@dimen/sub_small_spacing"
+                    android:text="@string/back_ablum"/>
+            </LinearLayout>
+        </com.andexert.library.RippleView>
+
+    </LinearLayout>
+
+</LinearLayout>
