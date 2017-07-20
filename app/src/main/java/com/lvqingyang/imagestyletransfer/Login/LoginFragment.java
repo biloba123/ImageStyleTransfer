@@ -68,7 +68,7 @@ public class LoginFragment extends BaseFragment {
     }
 
     @Override
-    protected View initContentView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    protected View initContentView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_login,container,false);
         return view;
     }

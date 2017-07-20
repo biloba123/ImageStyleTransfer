@@ -4,6 +4,7 @@
 package com.lvqingyang.imagestyletransfer.permission;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -53,6 +54,7 @@ import me.yokeyword.fragmentation.SupportActivity;
  */
 
 
+@SuppressLint("Registered")
 public class CheckPermissionsActivity extends SupportActivity
 		implements
 			ActivityCompat.OnRequestPermissionsResultCallback {

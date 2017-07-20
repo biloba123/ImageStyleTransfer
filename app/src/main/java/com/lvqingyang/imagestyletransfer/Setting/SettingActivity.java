@@ -14,6 +14,7 @@ public class SettingActivity extends BaseActivity {
 
     private SettingItem mCameraSi;
     private SettingItem mFeedbackSi;
+    private static final String TAG = "SettingActivity";
 
     public static void start(Context context) {
         Intent starter = new Intent(context, SettingActivity.class);
@@ -55,6 +56,5 @@ public class SettingActivity extends BaseActivity {
 
     @Override
     protected void getBundleExtras(Bundle extras) {
-
     }
 }

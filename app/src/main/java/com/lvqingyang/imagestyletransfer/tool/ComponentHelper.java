@@ -3,6 +3,8 @@ package com.lvqingyang.imagestyletransfer.tool;
 import android.app.Activity;
 import android.util.Log;
 
+import com.lvqingyang.imagestyletransfer.ShareActivity;
+
 import org.lasque.tusdk.TuSdkGeeV1;
 import org.lasque.tusdk.core.TuSdkResult;
 import org.lasque.tusdk.core.utils.TLog;
@@ -259,7 +261,7 @@ public class ComponentHelper {
         componentHelper.presentModalNavigationActivity(fragment, true);
     }
 
-    public static void showPhotoEdit(Activity activity)
+    public static void showPhotoEdit(final Activity activity)
     {
         if (activity == null) return;
         // see-http://tusdk.com/docs/android/api/org/lasque/tusdk/impl/components/base/TuSdkHelperComponent.html
@@ -270,7 +272,7 @@ public class ComponentHelper {
             @Override
             public void onComponentFinished(TuSdkResult result, Error error, TuFragment lastFragment)
             {
-                openEditMultiple(componentHelper, result, error, lastFragment);
+                openEditMultiple(activity, componentHelper, result, error, lastFragment);
             }
         });
 
@@ -281,7 +283,7 @@ public class ComponentHelper {
     }
 
     /** 开启照片美化组件 */
-    private static void openEditMultiple(TuSdkHelperComponent componentHelper, TuSdkResult result, Error error, TuFragment lastFragment)
+    private static void openEditMultiple(final Activity activity, TuSdkHelperComponent componentHelper, TuSdkResult result, Error error, TuFragment lastFragment)
     {
         if (result == null || error != null) return;
 
@@ -292,6 +294,7 @@ public class ComponentHelper {
             public void onComponentFinished(TuSdkResult result, Error error, TuFragment lastFragment)
             {
                 Log.d(TAG, "onComponentFinished: "+result+"\n"+result.image+"\n"+result.imageFile);
+                ShareActivity.start(activity,result.imageFile.getAbsolutePath());
 
                 // 默认输出为 Bitmap  -> result.image
 

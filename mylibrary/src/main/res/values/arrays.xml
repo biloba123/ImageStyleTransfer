@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <string-array name="bubble">
+    <string-array name="bubble" tools:ignore="MissingTranslation">
         <item>#41ffffff</item>
         <item>#18ffffff</item>
         <item>#1fffffff</item>
@@ -9,7 +9,7 @@
     </string-array>
 
 
-    <string-array name="BubbleAnimations">
+    <string-array name="BubbleAnimations" tools:ignore="MissingTranslation">
         <item>com.github.glomadrian.grav.generator.animation.SideToSideAnimator</item>
         <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
     </string-array>

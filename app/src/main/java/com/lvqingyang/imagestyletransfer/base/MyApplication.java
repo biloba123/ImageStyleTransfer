@@ -14,7 +14,6 @@ public class MyApplication extends TuSdkApplication {
         // 初始化SDK
         this.setEnableLog(true);
         this.initPreLoader(this.getApplicationContext(), "c2732abd7195dd3b-01-sfv0r1");
-
     }
 
 }
