@@ -17,6 +17,8 @@ import cn.bmob.push.BmobPush;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobInstallation;
 
+import static org.lasque.tusdk.core.exif.ExifInterface.ComponentsConfiguration.R;
+
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView mCameraIv;
@@ -56,12 +58,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void initData() {
-        Bmob.initialize(this, "bf3fef2683cecf005c55a4f6ce32c643");
-        // 使用推送服务时的初始化操作
-        BmobInstallation.getCurrentInstallation().save();
-        // 启动推送服务
-        BmobPush.startWork(this);
-
 
 //        BmobQuery<Picture> query = new BmobQuery<Picture>();
 //        query
