@@ -18,25 +18,32 @@
 - 当点击“社区”，则直接进入社区界面。
 
 ![](http://upload-images.jianshu.io/upload_images/5734256-de03e0254a5f74df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ## 功能模块 
 **1. 登录 、注册**
 ![](http://upload-images.jianshu.io/upload_images/5734256-454863ba290a452a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/5734256-b8e110e9c3cb5e79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 **2. 个人中心**         
 ![](http://upload-images.jianshu.io/upload_images/5734256-751638df818d18d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/5734256-160e2df444b26424.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 **3. 图片社区**
 ![](http://upload-images.jianshu.io/upload_images/5734256-9eacdd44ad510630.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/5734256-570c541ff2577b05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 **4. 投稿图片**
 ![](http://upload-images.jianshu.io/upload_images/5734256-5c304b3175b10e03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/5734256-0b1ca01771943b7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 **5. 分享图片**
 ![](http://upload-images.jianshu.io/upload_images/5734256-22c6ce3106122a8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/5734256-b0c3d231957b7d58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 **6. 举报、反馈**
 ![](http://upload-images.jianshu.io/upload_images/5734256-3af9e19d65bfcd5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/5734256-d73404aedc4648a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 **7. 图片处理**
 ![](http://upload-images.jianshu.io/upload_images/5734256-8dbb970392b12443.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/5734256-e086d9665e2e442c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
